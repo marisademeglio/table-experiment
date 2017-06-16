@@ -44,8 +44,7 @@ DT.prototype.makeDynamic = function(tblID) {
     
     if (this.tableType == 'basic') {
         // destroy leaves header rows after tbody if switching from fixed header so hack to reverse
-        //$(tblRef+' .table-header-row')[0].after($(tblRef+' > tbody'));
-        //$(tblRef+' .table-header-row')[1].after($(tblRef+' > tbody'));
+        $(tblRef+' > thead').after($(tblRef+' > tbody'));
         $(tblRef).DataTable({
                 "paging": false,
                 "info": false,
